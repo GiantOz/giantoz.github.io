@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contact</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAA/+4ACwgaACsA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAERERERERERERERERIRERERERERIiERERERERIiIhERERERIiAiIRERERIiACIiERERIiIiIiIhERIgAiAAIiIRIiAAAAIiIhIiAAIiIiACIiACIiIgAAAiIgIgAAAiAiIiAiIiIiIiISIiIiIiIiIREiIiIiIiIREREREREREREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rel="icon" type="image/x-icon" />
+
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+    <header id="masthead">
+        <div class="container">
+        <a href="file:///C:/Users/Giant%20OZ/Desktop/UPenn/Responsive-Portfolio/index.html" id="logo">Bryant Osborne</a>
+        <nav>
+            <a href="https://github.com/GiantOz">About Me</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="https://www.linkedin.com/in/bryant-osborne-26b910177?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BglpVJ7n8QZOShEDShF9nhA%3D%3D">Contact</a>
+        </nav>
+        </div>
+        
+    </header>
+
+    <div id="main-container" class="container">
+        <section class="main-section">
+            <h1>Contact</h1>
+            <div class="jumbotron">
+                    <h1 class="text-center">Sign-Up Today!</h1>
+                  </div>
+              
+                  <div class="row">
+              
+                    <!-- Sign-Up Card-->
+                    <div class="col-lg-6">
+                      <div class="card card-default">
+                        <div class="card-header">
+                          New Member Sign-Up
+                        </div>
+                        <div class="card-body">
+              
+                          <!-- Sign-up Form (note the various input "types")-->
+                          <form role="form">
+                            <div class="form-group row">
+                              <label for="name-input">Name:</label>
+                              <input class="form-control" id="name-input" type="text">
+                            </div>
+                            <div class="form-group row">
+                              <label for="email-input">Email:</label>
+                              <input class="form-control" id="email-input" type="email">
+                            </div>
+                            <div class="form-group row">
+                              <label for="age-input">Age:</label>
+                              <input class="form-control" id="age-input" type="number">
+                            </div>
+                            <div class="form-group row">
+                              <label for="comment-input">How did you hear about us?</label>
+                              <textarea class="form-control" id="comment-input" rows="5"></textarea>
+                            </div>
+                            <button class="btn btn-default" id="add-user" type="submit">Submit</button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+            <form id="contact-form">
+                <ul>
+                    <li>
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" placeholder="John Smith" required="required">
+                    </li>
+                    <li>
+                            <label for="email">Email</label>
+                            <input type="text" name="Email" id="email" placeholder="example@gmail.com" required="required">
+                    </li>
+                    <li>            
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required="required"></textarea>
+                    </li>
+                </ul>
+                <input type="submit" name="submit">
+            </form>
+        </section>
+         <!-- Script -->
+  <script>
+        // Capture Button Click
+        $("#add-user").on("click", function(event) {
+          // prevent form from trying to submit/refresh the page
+          event.preventDefault();
+    
+          // Capture User Inputs and store them into variables
+          var name = $("#name-input").val().trim();
+          var email = $("#email-input").val().trim();
+          var age = $("#age-input").val().trim();
+          var comment = $("#comment-input").val().trim();
+    
+          // Console log each of the user inputs to confirm we are receiving them
+          console.log(name);
+          console.log(email);
+          console.log(age);
+          console.log(comment);
+    
+          // Output all of the new information into the relevant HTML sections
+          $("#name-display").text(name);
+          $("#email-display").text(email);
+          $("#age-display").text(age);
+          $("#comment-display").text(comment);
+    
+        });
+        $("#save-name").on("click", function(event) {
+          // This line prevents the page from refreshing when a user hits "enter".
+          event.preventDefault();
+    
+          // Clear the HTML from the greeting header
+          $("#greeting").html("");
+    
+          // Grab the user input
+          var username = $("#your-name").val().trim();
+    
+          // Clear absolutely everything stored in localStorage using localStorage.clear()
+          localStorage.clear();
+    
+          // Store the username into localStorage using "localStorage.setItem"
+          localStorage.setItem("name", username);
+    
+          // And display that name for the user using "localStorage.getItem"
+          $("#greeting").text(localStorage.getItem("name"));
+    
+        });
+        </script>
+
+            
+
+        <section class="sidebar">
+            <div id="connect">
+                <H2>Connect with Me</H2>
+
+                <img src="images/GitHub-Mark-120px-plus.png" class="social" alt="Github">
+                <img src="images/so-icon.png" class="social" alt="StackOverflow">
+                <img src="images/In-Blue-128.png" class="social" alt="LinkedIn">
+
+
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="container">
+            &copy; Copyright 2019 Bryant Osborne
+        </div>
+    </footer>
+
+</body>
+</html>
